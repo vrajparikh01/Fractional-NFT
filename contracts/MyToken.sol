@@ -35,6 +35,7 @@ contract MyToken is ERC20, ERC20Burnable, Ownable, ERC20Permit, ERC721Holder {
         forSale = true;
     }
 
+    // anyone can buy the nft for the salePrice
     function buyNft() external payable {
         require(forSale, "Not for sale");
         require(msg.value == salePrice, "Not enough ether to but NFT");
@@ -43,6 +44,7 @@ contract MyToken is ERC20, ERC20Burnable, Ownable, ERC20Permit, ERC721Holder {
         canRedeem = true;
     }
 
+    // once nft is sold, user can redeem their erc20 for ether
     function redeem(uint256 _amount) external {
         require(canRedeem, "Not ready to redeem");
         uint256 totalBalance = address(this).balance;
