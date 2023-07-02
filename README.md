@@ -22,5 +22,9 @@ To deploy all the contracts , run the following command
 ## Tests
 To test the conttracts and see if the user is eligible for airdrop or not
 
-``` npx hardhat test test/test.js ```
+Here, we have to test in localhost as we we have deployed contracts in beforeEach function
+
+Run ``` npx hardhat node ``` in background while running the tests
+
+``` npx hardhat test test/test.js --network localhost ```
 
